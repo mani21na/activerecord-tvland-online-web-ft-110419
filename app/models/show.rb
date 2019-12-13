@@ -7,5 +7,9 @@ class Show < ActiveRecord::Base
     self.characters.collect do |c|
       c.actors.name
     end 
+    
+  def actors_list
+    self.actors.map{|actor| actor.full_name}
+  end
   end 
 end
